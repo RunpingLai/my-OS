@@ -7,7 +7,14 @@ typedef struct lock_t
 {
     int flag;   
 } lock_t;
+
 volatile lock_t mylock;
+
+/*
+读旧值
+设新值
+返旧值
+*/
 int TestAndSet(lock_t *lock)
 {
     int old_val = lock->flag;
